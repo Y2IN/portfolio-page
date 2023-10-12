@@ -2,6 +2,11 @@ import * as React from "react"
 import * as S from "./styled"
 import type { HeadFC, PageProps } from "gatsby"
 import MainBanner from "../components/mainBanner";
+import About from "../components/about";
+import TechStack from "../components/techStack";
+import Projects from "../components/projects";
+// import Navbar from "../components/navbar";
+
 
 
 const IndexPage: React.FC<PageProps> = () => {
@@ -30,6 +35,10 @@ const IndexPage: React.FC<PageProps> = () => {
   return (
     <S.Wrapper>
       <MainBanner mainBannerRef={browserSizeRef} />
+      {/* <Navbar innerWidth={innerWidth} /> */}
+      <About aboutRef={browserSizeRef} />
+      <TechStack techStackRef={browserSizeRef} />
+      <Projects projectsRef={browserSizeRef} />
     </S.Wrapper>
   )
 }
