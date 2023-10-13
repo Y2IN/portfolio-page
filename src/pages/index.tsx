@@ -2,12 +2,11 @@ import * as React from "react"
 import * as S from "./styled"
 import type { HeadFC, PageProps } from "gatsby"
 import MainBanner from "../components/mainBanner";
+import Projects from "../components/projects";
 import About from "../components/about";
 import TechStack from "../components/techStack";
-import Projects from "../components/projects";
-// import Navbar from "../components/navbar";
-
-
+import Navbar from "../components/navbar";
+import Terminal from "../components/terminal";
 
 const IndexPage: React.FC<PageProps> = () => {
   const browserSizeRef = React.useRef<HTMLDivElement>(null);
@@ -33,16 +32,22 @@ const IndexPage: React.FC<PageProps> = () => {
   }, []);
 
   return (
+    <div>
+    <div style={{ marginTop: "100px" }}>
+    <Navbar innerWidth={innerWidth} />
+    {/* <Terminal innerWidth={innerWidth} /> */}
     <S.Wrapper>
-      <MainBanner mainBannerRef={browserSizeRef} />
       {/* <Navbar innerWidth={innerWidth} /> */}
+      <MainBanner mainBannerRef={browserSizeRef} />
       <About aboutRef={browserSizeRef} />
       <TechStack techStackRef={browserSizeRef} />
       <Projects projectsRef={browserSizeRef} />
     </S.Wrapper>
+    </div>
+    </div>
   )
 }
 
-export default IndexPage
+export default IndexPage;
 
 export const Head: HeadFC = () => <title>제예인 포트폴리오</title>

@@ -1,0 +1,12 @@
+const color = {
+  blue2: "#228be6",
+  gray9: "#343a40",
+  gray8: "#495057",
+  gray6: "#868e96",
+  gray3: "#ced4da",
+  pink5: "#f06595",
+  red5: "#fa5252",
+  green5: "#51cf66",
+};
+
+export default palette;
