@@ -30,6 +30,10 @@ export const TerminalLinkStyle = {
 export const TerminalImg = styled.img`
   width: 60px;
   height: 60px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const TerminalText = styled.strong`
@@ -103,28 +107,27 @@ export const InputField = styled.input`
   outline: none;
 `;
 
-export const ModalWrapper = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-`;
+// export const ModalWrapper = styled.div`
+//   position: absoulte;
+//   top: 0;
+//   left: 0;
+//   height: 100%;
+//   width: 100%
+//   background: rgba(0, 0, 0, 0.5);
+//   display:flex;
+//   justify-content: center;
+//   align-items: center;
+//   z-index: 1000;
+// `;
 
-export const ModalContent = styled.div`
-  background: grey;
-  padding: 20px;
-  border-radius: 4px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  height: 80%;
-    width: 80%;
+// export const ModalContent = styled.div`
+//   background: grey;
+//   padding: 20px;
+//   border-radius: 4px;
+//   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+//   right: 0;
 
-`;
+// `;
 
 export const TerminalModalContent = styled.div`
 width: 100%;

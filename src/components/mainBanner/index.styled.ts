@@ -6,7 +6,6 @@ export const MainBannerWrapper = styled.div`
   align-items: center;
   height: 100vh;
   color: white;
-  background-color: black;
   overflow: hidden;
 `;
 
@@ -15,6 +14,7 @@ export const MainBannerTitle = styled.strong`
   font-weight: 700;
   margin-left: 2rem;
   margin-top: 30rem;
+  z-index: 1;
 
   @media screen and (max-width: 1100px) {
     font-size: 2.5rem;
@@ -64,11 +64,12 @@ export const TypingText = styled.span<{ $typing?: boolean }>`
 `;
 
 export const MainBannerImage = styled.img`
-  width: 100%;
+  width: 40%;
   height: 100%;
   object-fit: cover;
   position: absolute;
   top: 0;
+  right: 0;
 `;  
 
 export const MainBannerImageWrapper = styled.div`

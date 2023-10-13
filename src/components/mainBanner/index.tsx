@@ -122,9 +122,9 @@ const MainBanner: React.FC<MainBannerProps> = ({
           </Link>
         </S.MainBannerLinker>
       </S.MainBannerTitle>
-      <S.MainBannerImageWrapper>
+      {/* <S.MainBannerImageWrapper> */}
         <S.MainBannerImage src={yein} alt="yein" />
-      </S.MainBannerImageWrapper>
+      {/* </S.MainBannerImageWrapper> */}
     </S.MainBannerWrapper>
   );
 };

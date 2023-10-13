@@ -37,42 +37,7 @@ const TerminalContent = () => {
     };
 
     //명령어 처리
-    const command = {
-        clear: () => {
-          setMessages([]);
-        },
-        help: () => {
-          emphasisMsg("COMMANDS");
-          Object.keys(command).forEach((c) => emphasisMsg(`　${c}`));
-        },
-        ls: () => {
-            emphasisMsg("PROJECTS");
-            emphasisMsg(`
-              ${Object.keys(projects).map((p) => `　${p}`).join('\n')}
-            `);
-          },
-        };
 
-    useEffect(() => {
-        const msgs = [];
-    
-        msgs.push({ type: "EMPHASIS", content: "% Welcome to NB#Log terminal! %" });
-        msgs.push({
-          type: "EMPHASIS",
-          content: "- - - - - - - - - - - - - - - - - - - - - - - - - - ",
-        });
-        msgs.push({ type: "EMPHASIS", content: "COMMANDS" });
-        Object.keys(command).forEach((c) =>
-          msgs.push({ type: "text", content: `　${c}` })
-        );
-        msgs.push({
-          type: "EMPHASIS",
-          content: "- - - - - - - - - - - - - - - - - - - - - - - - - - ",
-        });
-        msgs.push({ type: "text", content: "　" });
-    
-        setMessages(msgs);
-      }, [command, setMessages]);
     //명령어 처리
 
 
