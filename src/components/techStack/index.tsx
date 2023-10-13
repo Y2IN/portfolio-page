@@ -10,7 +10,7 @@ const TechStack: React.FC<TechStackProps> = ({
 }: TechStackProps) => {
   return (
     <S.TechStackWrapper id="tech-stack" ref={techStackRef}>
-      <S.TechStackTitle>tech Stack</S.TechStackTitle>
+      <S.TechStackTitle>skill</S.TechStackTitle>
     </S.TechStackWrapper>
   );
 };
