@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import * as S from "./index.styled";
 import { graphql, useStaticQuery } from "gatsby";
 import { Link } from "react-scroll";
+import yein from "../../images/yein.png";
+
 
 interface MainBannerProps {
   mainBannerRef: React.RefObject<HTMLDivElement>;
@@ -120,6 +122,9 @@ const MainBanner: React.FC<MainBannerProps> = ({
           </Link>
         </S.MainBannerLinker>
       </S.MainBannerTitle>
+      <S.MainBannerImageWrapper>
+        <S.MainBannerImage src={yein} alt="yein" />
+      </S.MainBannerImageWrapper>
     </S.MainBannerWrapper>
   );
 };
