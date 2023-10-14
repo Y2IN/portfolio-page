@@ -15,8 +15,7 @@ const Navbar: React.FC<NavbarProps> = ({ innerWidth }: NavbarProps) => {
   const [isTop, setIsTop] = useState(true);
   const navbarRef = useRef<HTMLDivElement | null>(null);
 
-
-    const handleListClick = () => {
+  const handleListClick = () => {
     setIsListOpen(!isListOpen);
   };
   const handleScroll = () => {
@@ -41,13 +40,14 @@ const Navbar: React.FC<NavbarProps> = ({ innerWidth }: NavbarProps) => {
   }, [scrollY]);
 
   return (
-    <S.NavbarWrapper
-      id="navbar"
-      className={isTop ? "top" : ""}
-      ref={navbarRef}
-    >
+    <S.NavbarWrapper id="navbar" className={isTop ? "top" : ""} ref={navbarRef}>
       <S.LeftContents>
-        <Link to="main-banner" smooth={true} duration={500} style={S.LeftLinkStyle}>
+        <Link
+          to="main-banner"
+          smooth={true}
+          duration={500}
+          style={S.LeftLinkStyle}
+        >
           <S.LogoImg src={logo} alt="logo" />
           <p>제예인 포트폴리오</p>
         </Link>
@@ -59,7 +59,10 @@ const Navbar: React.FC<NavbarProps> = ({ innerWidth }: NavbarProps) => {
           onClick={() => setIsListOpen(!isListOpen)}
         />
         {isListOpen && (
-         <S.ListContainer onClick={handleListClick}>
+          <S.ListContainer onClick={handleListClick}>
+            <Link to="main-banner" smooth={true} duration={500}>
+              <p>MAIN</p>
+            </Link>
             <Link to="about" smooth={true} duration={500}>
               <p>ABOUT</p>
             </Link>
@@ -71,6 +74,9 @@ const Navbar: React.FC<NavbarProps> = ({ innerWidth }: NavbarProps) => {
             </Link>
           </S.ListContainer>
         )}
+        <Link to="main-banner" smooth={true} duration={500}>
+          <p>MAIN</p>
+        </Link>
         <Link to="about" smooth={true} duration={500}>
           <p>ABOUT</p>
         </Link>
