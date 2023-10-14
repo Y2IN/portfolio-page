@@ -7,6 +7,8 @@ import About from "../components/about";
 import TechStack from "../components/techStack";
 import Navbar from "../components/navbar";
 import Terminal from "../components/terminal";
+import MeteorShower from "../components/meteor";
+import Background from "../components/background";
 
 const isBrowser = typeof window !== "undefined";
 
@@ -42,19 +44,18 @@ const IndexPage: React.FC<PageProps> = () => {
   }, []);
 
   return (
-    <div>
-      <div style={{ marginTop: "100px" }}>
-        <Navbar innerWidth={innerWidth} />
-        <Terminal innerWidth={innerWidth} innerHeight={innerHeight} />
-        <S.Wrapper>
-          {/* <Navbar innerWidth={innerWidth} /> */}
-          <MainBanner mainBannerRef={browserSizeRef} />
-          <About aboutRef={browserSizeRef} />
-          <TechStack techStackRef={browserSizeRef} />
-          <Projects projectsRef={browserSizeRef} />
-        </S.Wrapper>
-      </div>
-    </div>
+    <S.Wrapper>
+      {/* <div style={{ marginTop: "100px" }}> */}
+      <Background />
+      <MeteorShower numMeteors={50} />
+      <Navbar innerWidth={innerWidth} />
+      {/* <Terminal innerWidth={innerWidth} innerHeight={innerHeight} /> */}
+      {/* <Navbar innerWidth={innerWidth} /> */}
+      <MainBanner mainBannerRef={browserSizeRef} />
+      <About aboutRef={browserSizeRef} />
+      <TechStack techStackRef={browserSizeRef} />
+      <Projects projectsRef={browserSizeRef} />
+    </S.Wrapper>
   );
 };
 
