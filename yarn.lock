@@ -1714,6 +1714,11 @@
     "@lezer/lr" "^0.15.4"
     json5 "^2.2.1"
 
+"@msgpackr-extract/msgpackr-extract-darwin-arm64@2.1.2":
+  version "2.1.2"
+  resolved "https://registry.npmjs.org/@msgpackr-extract/msgpackr-extract-darwin-arm64/-/msgpackr-extract-darwin-arm64-2.1.2.tgz"
+  integrity sha512-TyVLn3S/+ikMDsh0gbKv2YydKClN8HaJDDpONlaZR+LVJmsxLFUgA+O7zu59h9+f9gX1aj/ahw9wqa6rosmrYQ==
+
 "@mui/base@5.0.0-beta.19":
   version "5.0.0-beta.19"
   resolved "https://registry.npmjs.org/@mui/base/-/base-5.0.0-beta.19.tgz"
@@ -9381,6 +9386,20 @@ ms@2.1.2:
   resolved "https://registry.npmjs.org/ms/-/ms-2.1.2.tgz"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
+msgpackr-extract@^2.0.2:
+  version "2.1.2"
+  resolved "https://registry.npmjs.org/msgpackr-extract/-/msgpackr-extract-2.1.2.tgz"
+  integrity sha512-cmrmERQFb19NX2JABOGtrKdHMyI6RUyceaPBQ2iRz9GnDkjBWFjNJC0jyyoOfZl2U/LZE3tQCCQc4dlRyA8mcA==
+  dependencies:
+    node-gyp-build-optional-packages "5.0.3"
+  optionalDependencies:
+    "@msgpackr-extract/msgpackr-extract-darwin-arm64" "2.1.2"
+    "@msgpackr-extract/msgpackr-extract-darwin-x64" "2.1.2"
+    "@msgpackr-extract/msgpackr-extract-linux-arm" "2.1.2"
+    "@msgpackr-extract/msgpackr-extract-linux-arm64" "2.1.2"
+    "@msgpackr-extract/msgpackr-extract-linux-x64" "2.1.2"
+    "@msgpackr-extract/msgpackr-extract-win32-x64" "2.1.2"
+
 msgpackr@^1.5.4:
   version "1.6.2"
   resolved "https://registry.npmjs.org/msgpackr/-/msgpackr-1.6.2.tgz"
@@ -10762,6 +10781,11 @@ react-shallow-renderer@^16.15.0:
   dependencies:
     object-assign "^4.1.1"
     react-is "^16.12.0 || ^17.0.0 || ^18.0.0"
+
+react-skillicons@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/react-skillicons/-/react-skillicons-1.0.2.tgz"
+  integrity sha512-SG9Qdb+dDlqHnmaQsXwtgeFZ3U15vAtosPrrH+2GupQg1H0RC/Zp+taRvnFRNyrjIpU1mA6S3d7+/LntBm8vhg==
 
 react-spring@^9.7.3:
   version "9.7.3"
