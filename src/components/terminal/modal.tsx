@@ -57,20 +57,15 @@ const TerminalModal: React.FC<ModalProps> = ({
   const [messages, setMessages] = useState<string[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
-      const newMessages = [...messages, commend];
-      setMessages(newMessages);
-      setCommend("");
-      if (inputRef.current) {
-        inputRef.current.scrollIntoView({ behavior: "smooth" });
-      }
+  const handleKeyPress = () => {
+    const newMessages = [...messages, commend];
+    setMessages(newMessages);
+    console.log(messages);
+    setCommend("");
+    if (inputRef.current) {
+      inputRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
-
-  useEffect(() => {
-    console.log(commend);
-  }, [commend]);
 
   return (
     <Modal
@@ -114,6 +109,25 @@ const TerminalModal: React.FC<ModalProps> = ({
         <TypographyDevider>
           {innerWidth > 1100 ? `${"-".repeat(50)}` : `${"-".repeat(30)}`}
         </TypographyDevider>
+        {messages.map((message, idx) => (
+          <div
+            style={{
+              height: "2rem",
+              display: "flex",
+              flexDirection: "row",
+            }}
+          >
+            <div>
+              <TypographyDevider
+                color="#0677d9"
+                variant="h6"
+                style={{ display: "flex" }}
+              >
+                YEIN#log:~$ {message}
+              </TypographyDevider>
+            </div>
+          </div>
+        ))}
         <S.TerminalModalContent
           style={{ height: `${innerHeight * 0.8 - 300}px` }}
         >
@@ -138,10 +152,11 @@ const TerminalModal: React.FC<ModalProps> = ({
               value={commend}
               onChange={(e) => setCommend(e.target.value)}
               onKeyPress={(e) => {
-                if (e.key === "enter") setCommend("");
+                if (e.key === "Enter") handleKeyPress();
               }}
               spellCheck="false"
               autoFocus
+              maxLength={10} // 10글자 이상 입력 불가
             />
           </div>
         </S.TerminalModalContent>
