@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import * as S from "./styled";
+import * as S from "../styles/styled";
 import type { HeadFC, PageProps } from "gatsby";
 import MainBanner from "../components/mainBanner";
 import Projects from "../components/projects";
