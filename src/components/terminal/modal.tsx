@@ -19,6 +19,11 @@ interface TypographyDeviderProps {
   style?: Object;
 }
 
+interface TerminalCommend {
+  commend: string;
+  result: string;
+}
+
 const TypographyDevider: React.FC<TypographyDeviderProps> = ({
   children,
   variant,
@@ -54,12 +59,18 @@ const TerminalModal: React.FC<ModalProps> = ({
   onKeyUp,
 }: ModalProps) => {
   const [commend, setCommend] = useState<string>("");
-  const [messages, setMessages] = useState<string[]>([]);
+  const [messages, setMessages] = useState<TerminalCommend[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
+  const commendList = ["whoami", "pwd", "ls", "cd", "exit", "clear"];
 
   const handleKeyPress = () => {
-    const newMessages = [...messages, commend];
-    setMessages(newMessages);
+    const newMessage: TerminalCommend = {
+      commend: commend,
+      result: commendList.includes(commend)
+        ? commend
+        : `'${commend}'은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는 배치 파일이 아닙니다.`,
+    };
+    setMessages((prev) => [...prev, newMessage]);
     console.log(messages);
     setCommend("");
     if (inputRef.current) {
@@ -110,21 +121,39 @@ const TerminalModal: React.FC<ModalProps> = ({
           {innerWidth > 1100 ? `${"-".repeat(50)}` : `${"-".repeat(30)}`}
         </TypographyDevider>
         {messages.map((message, idx) => (
-          <div
-            style={{
-              height: "2rem",
-              display: "flex",
-              flexDirection: "row",
-            }}
-          >
-            <div>
-              <TypographyDevider
-                color="#0677d9"
-                variant="h6"
-                style={{ display: "flex" }}
-              >
-                YEIN#log:~$ {message}
-              </TypographyDevider>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <div
+              style={{
+                height: "2rem",
+                display: "flex",
+                flexDirection: "row",
+              }}
+            >
+              <div>
+                <TypographyDevider
+                  color="#0677d9"
+                  variant="h6"
+                  style={{ display: "flex" }}
+                >
+                  YEIN#log:~$ {message.commend}
+                </TypographyDevider>
+              </div>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+              }}
+            >
+              <div>
+                <TypographyDevider
+                  color="#0677d9"
+                  variant="h6"
+                  style={{ display: "flex" }}
+                >
+                  {message.result}
+                </TypographyDevider>
+              </div>
             </div>
           </div>
         ))}
