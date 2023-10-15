@@ -48,7 +48,7 @@ export const RightContents = styled.div`
   display: flex;
   align-items: center;
   gap: 2rem;
-  cursor: pointer;
+  background-color: transparent;
 
   & > *:last-child {
     padding-right: 2rem;

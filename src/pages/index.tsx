@@ -44,12 +44,12 @@ const IndexPage: React.FC<PageProps> = () => {
   }, []);
 
   return (
-    <S.Wrapper>
+    <S.Wrapper id="main">
       {/* <div style={{ marginTop: "100px" }}> */}
       <Background />
       <MeteorShower numMeteors={50} />
       <Navbar innerWidth={innerWidth} />
-      {/* <Terminal innerWidth={innerWidth} innerHeight={innerHeight} /> */}
+      <Terminal innerWidth={innerWidth} innerHeight={innerHeight} />
       {/* <Navbar innerWidth={innerWidth} /> */}
       <MainBanner mainBannerRef={browserSizeRef} />
       <About aboutRef={browserSizeRef} />
