@@ -62,6 +62,11 @@ const TerminalModal: React.FC<ModalProps> = ({
   const [messages, setMessages] = useState<TerminalCommend[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
   const commendList = ["whoami", "pwd", "ls", "cd", "exit", "clear"];
+  const messageEndRef = useRef<HTMLLIElement | null>(null);
+
+  useEffect(() => {
+    messageEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
 
   const handleKeyPress = () => {
     const newMessage: TerminalCommend = {
@@ -120,46 +125,46 @@ const TerminalModal: React.FC<ModalProps> = ({
         <TypographyDevider>
           {innerWidth > 1100 ? `${"-".repeat(50)}` : `${"-".repeat(30)}`}
         </TypographyDevider>
-        {messages.map((message, idx) => (
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <div
-              style={{
-                height: "2rem",
-                display: "flex",
-                flexDirection: "row",
-              }}
-            >
-              <div>
-                <TypographyDevider
-                  color="#0677d9"
-                  variant="h6"
-                  style={{ display: "flex" }}
-                >
-                  YEIN#log:~$ {message.commend}
-                </TypographyDevider>
-              </div>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-              }}
-            >
-              <div>
-                <TypographyDevider
-                  color="#0677d9"
-                  variant="h6"
-                  style={{ display: "flex" }}
-                >
-                  {message.result}
-                </TypographyDevider>
-              </div>
-            </div>
-          </div>
-        ))}
         <S.TerminalModalContent
           style={{ height: `${innerHeight * 0.8 - 300}px` }}
         >
+          {messages.map((message, idx) => (
+            <div key={idx} style={{ display: "flex", flexDirection: "column" }}>
+              <div
+                style={{
+                  height: "2rem",
+                  display: "flex",
+                  flexDirection: "row",
+                }}
+              >
+                <div>
+                  <TypographyDevider
+                    color="#0677d9"
+                    variant="h6"
+                    style={{ display: "flex" }}
+                  >
+                    YEIN#log:~$ {message.commend}
+                  </TypographyDevider>
+                </div>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                }}
+              >
+                <div>
+                  <TypographyDevider
+                    color="#0677d9"
+                    variant="h6"
+                    style={{ display: "flex" }}
+                  >
+                    {message.result}
+                  </TypographyDevider>
+                </div>
+              </div>
+            </div>
+          ))}
           <div
             style={{
               height: "2rem",
@@ -188,6 +193,7 @@ const TerminalModal: React.FC<ModalProps> = ({
               maxLength={10} // 10글자 이상 입력 불가
             />
           </div>
+          <li ref={messageEndRef} style={{ zIndex: -10 }} />
         </S.TerminalModalContent>
       </Box>
     </Modal>

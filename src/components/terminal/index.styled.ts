@@ -55,6 +55,7 @@ export const TerminalModalContent = styled.div`
   overflow-y: auto;
   box-sizing: border-box;
   display: flex;
+  flex-direction: column;
   & > div > span {
     font-weight: 300;
     margin-right: 2px;
