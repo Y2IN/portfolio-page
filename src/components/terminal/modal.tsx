@@ -3,6 +3,7 @@ import * as S from "./index.styled";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+import * as Scroll from "react-scroll";
 
 interface ModalProps {
   isTerminalOpen: boolean;
@@ -51,6 +52,39 @@ const TypographyDevider: React.FC<TypographyDeviderProps> = ({
   );
 };
 
+const scroll = Scroll.animateScroll;
+
+const cdList = ["main", "about", "tech-stack", "projects", "contact"];
+
+const commendAction = (commend: string) => {
+  const commendSplit = commend.split(" ");
+  switch (commendSplit[0]) {
+    case "whoami":
+      return ["whoami", "yein/developer"];
+    case "pwd":
+      return ["pwd", "https://y2in.github.io/portfolio-page"];
+    case "ls":
+      return ["ls", "main/ about/ tech-stack/ projects/ contact/"];
+    case "cd":
+      if (commendSplit.length === 1) return ["cd", "~"];
+      const path = commendSplit.slice(1, commendSplit.length).join(" ");
+      if (cdList.includes(path)) {
+        const target = document.getElementById(path)?.offsetTop;
+        scroll.scrollTo(target, { duration: 500, smooth: true });
+        return ["cd", `~/${path}`];
+      } else return ["cd", `-bash: cd: ${path}: No such file or directory`];
+    case "exit":
+      return ["exit", "exit"];
+    case "clear":
+      return ["clear", "clear"];
+    default:
+      return [
+        commend,
+        `'${commend}'은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는 배치 파일이 아닙니다.`,
+      ];
+  }
+};
+
 const TerminalModal: React.FC<ModalProps> = ({
   isTerminalOpen,
   setIsTerminalOpen,
@@ -61,7 +95,6 @@ const TerminalModal: React.FC<ModalProps> = ({
   const [commend, setCommend] = useState<string>("");
   const [messages, setMessages] = useState<TerminalCommend[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
-  const commendList = ["whoami", "pwd", "ls", "cd", "exit", "clear"];
   const messageEndRef = useRef<HTMLLIElement | null>(null);
 
   useEffect(() => {
@@ -70,13 +103,13 @@ const TerminalModal: React.FC<ModalProps> = ({
 
   const handleKeyPress = () => {
     const newMessage: TerminalCommend = {
-      commend: commend,
-      result: commendList.includes(commend)
-        ? commend
-        : `'${commend}'은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는 배치 파일이 아닙니다.`,
+      commend: commendAction(commend)[0],
+      result: commendAction(commend)[1],
     };
     setMessages((prev) => [...prev, newMessage]);
-    console.log(messages);
+    if (newMessage.commend === "clear" || newMessage.commend === "exit")
+      setMessages([]);
+    if (newMessage.commend === "exit") setIsTerminalOpen(false);
     setCommend("");
     if (inputRef.current) {
       inputRef.current.scrollIntoView({ behavior: "smooth" });
@@ -190,7 +223,7 @@ const TerminalModal: React.FC<ModalProps> = ({
               }}
               spellCheck="false"
               autoFocus
-              maxLength={10} // 10글자 이상 입력 불가
+              maxLength={15} // 15글자 이상 입력 불가
             />
           </div>
           <li ref={messageEndRef} style={{ zIndex: -10 }} />
