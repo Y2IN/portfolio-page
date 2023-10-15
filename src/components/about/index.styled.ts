@@ -1,5 +1,3 @@
-import { LogoImg } from "./../navbar/index.styled";
-import { photoWrapped } from "./index.styled";
 import styled from "styled-components";
 
 export const AboutWrapper = styled.div`

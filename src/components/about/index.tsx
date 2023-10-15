@@ -1,6 +1,5 @@
 import React from "react";
 import * as S from "./index.styled";
-import Navbar from "../navbar";
 import yeinPhoto from "../../images/yeinPhoto.png";
 import profile from "../../images/profile.svg";
 import mail from "../../images/mail.svg";
@@ -35,7 +34,7 @@ const About: React.FC<AboutProps> = ({ aboutRef }: AboutProps) => {
             </S.explainItem>
             <S.explainItem>
               <S.profileiIcon src={mail} />
-              <S.Text>dpdls0228@aum.net</S.Text>
+              <S.Text>dpdls0228@daum.net</S.Text>
             </S.explainItem>
           </S.explainItemsByColumn>
         </S.explainItemByRow>
