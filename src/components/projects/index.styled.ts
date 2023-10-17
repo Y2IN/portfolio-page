@@ -1,3 +1,4 @@
+import { link } from "fs";
 import styled, { keyframes } from "styled-components";
 
 export const ProjectWrapper = styled.div`
@@ -24,6 +25,8 @@ export const ProjectTitle = styled.div`
 export const projectContainer = styled.div`
   display: flex;
   flex-direction: column;
+  position: relative;
+
   width: 100rem;
   height: 60rem;
   border-radius: 1.875rem;
@@ -32,22 +35,14 @@ export const projectContainer = styled.div`
   opacity: 0.8;
   box-sizing: border-box;
 `;
-export const githubWrapper = styled.nav`
-  // width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  // position: fixed;
-  color: #ffffff;
-  bottom: 0;
-  left: 20px;
-  z-index: 999;
-  gap: 2rem;
-`;
 
 export const github = styled.img`
-  display: flex;
-  z-index: 2;
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  // z-index: 2;
+  width: 5rem;
+  height: 5rem;
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -134,4 +129,16 @@ export const SliderImage = styled.img`
   width: 40rem;
   height: 40rem;
   z-index: 3;
+`;
+
+export const Content = styled.p`
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 0.5rem;
+`;
+
+export const sitelink = styled.a`
+  display: flex;
 `;

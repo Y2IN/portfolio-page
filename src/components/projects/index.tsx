@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ccpp from "../../images/ccpp.png";
 import ccpp2 from "../../images/ccpp2.png";
+import githublogo from "../../images/githublogo.svg";
 import styled, { keyframes } from "styled-components";
 
 // import githublogo from "../../images/githublogo.svg";
@@ -15,63 +16,62 @@ interface ProjectsProps {
 
 const projects: Array<{
   id: string;
-  date?: string;
+  date: string;
   kr: string;
   content: string;
-  link: string;
+  link?: string;
   photo: string[];
   use: string;
 }> = [
   {
     id: "칙칙퐁퐁",
     use: "React, Node.js, Socket.io, MongoDB, AWS",
-    date: "2023.06 ~ 2023.09(5명)",
+    date: "2023.07 ~ 2023.09(5명)",
     kr: "퐁 게임 + 채팅 서비스 구현",
-    content: `1111
-              11111
-                1111
-                11111`, //개행 처리 해야함
+    content:
+      "jwt를 사용하여 소셜 로그인 기능 구현\nsocket을 사용하여 실시간 채팅 서비스 구현\nsocket을 사용하여 실시간 게임 서비스 구현",
     link: "https://github.com/Y2IN",
     photo: [ccpp, ccpp2],
   },
   {
-    id: "프로젝트 이름 2",
-    use: "React, Node.js, Socket.io, MongoDB, AWS",
-    date: "2023.06 ~ 2023.09(5명)",
-    kr: "프로젝트 이름 2",
-    content: "프로젝트 설명 2",
-    link: "주소 2",
-    photo: [ccpp, ccpp2],
-    // photo: "photo위치",
-  },
-  {
-    id: "프로젝트 이름 3",
-    use: "React, Node.js, Socket.io, MongoDB, AWS",
-    date: "2021.01 ~ 2021.02(5명)",
-    kr: "프로젝트 이름 3",
-    content: "프로젝트 설명 3",
+    id: "Inception",
+    use: "docker docker-compose alpine nginx mariadb WordPress",
+    date: "2023.06 ~ 2023.07(1명)",
+    kr: "가상환경에서 워드프레스 구현",
+    content:
+      "docker-compose를 사용하여 컨테이너를 빌드\n Alpine Linux를 사용하여 이미지 패키지 설치\nnginx를 사용하여 웹서버 구현\nmariadb를 사용하여 데이터베이스 구현\nWordPress를 사용하여 웹사이트 구현",
     link: "주소 3",
-    photo: [ccpp],
+    photo: [],
 
     // photo: "photo위치",
   },
   {
-    id: "프로젝트 이름 4",
-    use: "React, Node.js, Socket.io, MongoDB, AWS",
+    id: "Webserv",
+    use: "c++ socket",
+    date: "2023.03 ~ 2023.06(3명)",
+    kr: "c++로 웹서버 구현",
+    content: "프로젝트 설명 2",
+    link: "주소 2",
+    photo: [],
+    // photo: "photo위치",
+  },
+  {
+    id: "minishell",
+    use: "c ",
     date: "2021.01 ~ 2021.02(5명)",
     kr: "프로젝트 이름 4",
     content: "프로젝트 설명 4",
     link: "주소 4",
-    photo: [ccpp, ccpp2],
+    photo: [],
   },
   {
-    id: "프로젝트 이름 5",
-    use: "React, Node.js, Socket.io, MongoDB, AWS",
-    date: "2021.01 ~ 2021.02(5명)",
-    kr: "프로젝트 이름 5",
+    id: "smart window",
+    use: "c arduino androidStudio",
+    date: "2020.06 ~ 2021.10(5명)",
+    kr: "아두이노를 활용하여 자동 제어 창문 구현",
     content: "프로젝트 설명 5",
     link: "주소 5",
-    photo: [ccpp, ccpp2],
+    photo: [],
   },
 ];
 
@@ -142,11 +142,17 @@ const Project = ({ project }) => (
         <S.projectsubTitle className="project-title">
           {project.kr}
         </S.projectsubTitle>
-        <S.projectDescription className="project-description">
+        <S.projectDescription
+          className="project-description"
+          style={{ whiteSpace: "pre-line" }}
+        >
           {project.content}
         </S.projectDescription>
       </div>
     </div>
+    <S.sitelink href={project.link} target="_blank">
+      <S.github src={githublogo} />
+    </S.sitelink>
   </S.projectContainer>
 );
 
