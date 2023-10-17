@@ -62,7 +62,7 @@ const commendAction = (commend: string) => {
     case "whoami":
       return ["whoami", "yein/developer"];
     case "pwd":
-      return ["pwd", "https://y2in.github.io/portfolio-page"];
+      return ["pwd", "https://y2in.dev"];
     case "ls":
       return ["ls", "main/ about/ tech-stack/ projects/ contact/"];
     case "cd":

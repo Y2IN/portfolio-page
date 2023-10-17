@@ -1,25 +1,25 @@
-Arguments: 
+Arguments:
   /usr/local/bin/node /opt/homebrew/Cellar/yarn/1.22.19/libexec/bin/yarn.js add redux react-redux @types/react-redux
 
-PATH: 
+PATH:
   /opt/homebrew/opt/pyqt@5/bin:/opt/homebrew/opt/qt@5/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/opt/homebrew/opt/pyqt@5/bin:/opt/homebrew/opt/qt@5/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/Users/yein/development/flutter/bin:/Users/yein/development/flutter/bin
 
-Yarn version: 
+Yarn version:
   1.22.19
 
-Node version: 
+Node version:
   18.16.1
 
-Platform: 
+Platform:
   darwin arm64
 
-Trace: 
+Trace:
   Error: EACCES: permission denied, mkdir '/Users/yein/portfolio-page/node_modules/@typescript-eslint/eslint-plugin/node_modules/ignore'
 
-npm manifest: 
+npm manifest:
   {
     "name": "yein-portfolio",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "private": true,
     "description": "yein-portfolio",
     "author": "Y2IN",
@@ -62,8 +62,8 @@ npm manifest:
     }
   }
 
-yarn manifest: 
+yarn manifest:
   No manifest
 
-Lockfile: 
+Lockfile:
   No lockfile
