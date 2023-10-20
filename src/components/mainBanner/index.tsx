@@ -4,7 +4,6 @@ import { graphql, useStaticQuery } from "gatsby";
 import { Link } from "react-scroll";
 import yein from "../../images/yein.png";
 
-
 interface MainBannerProps {
   mainBannerRef: React.RefObject<HTMLDivElement>;
 }
@@ -123,7 +122,7 @@ const MainBanner: React.FC<MainBannerProps> = ({
         </S.MainBannerLinker>
       </S.MainBannerTitle>
       {/* <S.MainBannerImageWrapper> */}
-        <S.MainBannerImage src={yein} alt="yein" />
+      <S.MainBannerImage src={yein} alt="yein" />
       {/* </S.MainBannerImageWrapper> */}
     </S.MainBannerWrapper>
   );

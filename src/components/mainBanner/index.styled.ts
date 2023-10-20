@@ -36,9 +36,8 @@ export const MainBannerLinker = styled.div`
   font-size: 1.2rem;
   border: 3px solid #ffffff;
   cursor: pointer;
-  border: 2px solid white ;
+  border: 2px solid white;
   border-radius: 20px;
-  
 `;
 
 const typing = keyframes`
@@ -61,6 +60,11 @@ export const TypingText = styled.span<{ $typing?: boolean }>`
       animation: ${typing} 2s steps(40, end),
         ${blinkCaret} 0.75s step-end infinite;
     `}
+
+  @media screen and (max-width: 1100px) {
+    font-size: 2.5rem;
+    white-space: normal;
+  }
 `;
 
 export const MainBannerImage = styled.img`
@@ -70,7 +74,19 @@ export const MainBannerImage = styled.img`
   position: absolute;
   top: 0;
   right: 0;
-`;  
+
+  @media screen and (max-width: 1100px) {
+    width: 60%;
+  }
+
+  @media screen and (max-width: 900px) {
+    width: 70%;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`;
 
 export const MainBannerImageWrapper = styled.div`
   width: 100%;

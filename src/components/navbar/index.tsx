@@ -52,38 +52,42 @@ const Navbar: React.FC<NavbarProps> = ({ innerWidth }: NavbarProps) => {
           <p>제예인 포트폴리오</p>
         </Link>
       </S.LeftContents>
-      <S.RightContents>
+      <S.RightContents $isListOpen={isListOpen}>
         <S.Hamburger
           src={isListOpen ? close : list}
           alt="list"
           onClick={() => setIsListOpen(!isListOpen)}
         />
-        {isListOpen && (
-          <S.ListContainer onClick={handleListClick}>
-            <Link to="main-banner" smooth={true} duration={500}>
-              <p>MAIN</p>
-            </Link>
-            <Link to="about" smooth={true} duration={500}>
-              <p>ABOUT</p>
-            </Link>
-            <Link to="tech-stack" smooth={true} duration={500}>
-              <p>SKILL</p>
-            </Link>
-            <Link to="projects" smooth={true} duration={500}>
-              <p>PROJECTS</p>
-            </Link>
-          </S.ListContainer>
-        )}
-        <Link to="main-banner" smooth={true} duration={500}>
+        <Link
+          to="main-banner"
+          smooth={true}
+          duration={500}
+          onClick={() => setIsListOpen(false)}
+        >
           <p>MAIN</p>
         </Link>
-        <Link to="about" smooth={true} duration={500}>
+        <Link
+          to="about"
+          smooth={true}
+          duration={500}
+          onClick={() => setIsListOpen(false)}
+        >
           <p>ABOUT</p>
         </Link>
-        <Link to="tech-stack" smooth={true} duration={500}>
+        <Link
+          to="tech-stack"
+          smooth={true}
+          duration={500}
+          onClick={() => setIsListOpen(false)}
+        >
           <p>TECH STACK</p>
         </Link>
-        <Link to="projects" smooth={true} duration={500}>
+        <Link
+          to="projects"
+          smooth={true}
+          duration={500}
+          onClick={() => setIsListOpen(false)}
+        >
           <p>PROJECTS</p>
         </Link>
       </S.RightContents>

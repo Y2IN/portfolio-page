@@ -10,6 +10,7 @@ import ts4 from "../../images/ts4.png";
 import ts5 from "../../images/ts5.png";
 import ts6 from "../../images/ts6.png";
 import ts7 from "../../images/ts7.png";
+
 import githublogo from "../../images/githublogo.svg";
 import inception2 from "../../images/inception2.png";
 import inception from "../../images/inception.png";
@@ -77,7 +78,7 @@ const projects: Array<{
     date: "2022.3 ~ 2022.(2명)",
     kr: "ray tracing 구현",
     content:
-      "ray tracing을 사용하여 3차원 그래픽 구현\n\n그래픽스 이론 이해\n\n빛의 반사, 굴절, 그림자 등을 구현\n\n다양한 도형 구현\n\n다양한 빛 구현\n\n다양한 카메라 구현\n\n다양한 효과 구현",
+      "ray tracing을 사용하여 3차원 그래픽 구현\n그래픽스 이론 이해\n\n빛의 반사, 굴절, 그림자 등을 구현\n\n다양한 도형 구현\n\n다양한 빛 구현\n\n다양한 카메라 구현\n\n다양한 효과 구현",
     link: "https://github.com/Y2IN/42Seoul/tree/main/3/minishell",
     photo: [minirt],
   },
@@ -104,34 +105,13 @@ const projects: Array<{
 
 //사진 슬라이드 컴포넌트 구현
 const ImageSlider: React.FC<{ images: string[] }> = ({ images }) => {
-  const sliderRef = React.useRef<Slider>(null);
-
-  // React.useEffect(() => {
-  //   // 이미지가 2장 이상인 경우에만 자동 슬라이딩 설정
-  //   if (images.length > 1) {
-  //     const slider = sliderRef.current;
-
-  // 자동 슬라이딩 설정 (3초마다)
-  // const autoSlide = () => {
-  //   slider?.slickNext(); // 다음 슬라이드로 이동
-  // };
-
-  // const intervalId = setInterval(autoSlide, 3000); // 인터벌 생성
-
-  // slider?.on?.("beforeChange", () => {
-  //   clearInterval(intervalId); // 이전 인터벌 제거
-  // });
-
-  // autoSlide(); // 처음 자동 슬라이딩 시작
-  //   }
-  // }, [images]);
-
   const settings = {
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+    infinite: true, // 무한 반복 옵션
+    speed: 500, // 슬라이드 속도
+    slidesToShow: 1, // 한 화면에 보여질 슬라이드 개수
+    slidesToScroll: 1, // 한번에 슬라이드할 개수
     arrows: true,
+
     // ref: sliderRef, // sliderRef를 사용하여 슬라이더를 컨트롤
   };
 
@@ -148,10 +128,8 @@ const ImageSlider: React.FC<{ images: string[] }> = ({ images }) => {
   );
 };
 
-const Project = ({ project }) => (
+const Project = ({ project, isMobile }) => (
   <S.projectContainer>
-    {/* <div className="project-title">{project.id}</div>
-     */}
     <S.projectTitle className="project-title">{project.id}</S.projectTitle>
     <div style={{ display: "flex", justifyContent: "space-between" }}>
       <S.projectskill className="project-title use">
@@ -162,20 +140,35 @@ const Project = ({ project }) => (
       </S.projectDate>
     </div>
     <S.Line />
-    <div style={{ display: "flex", flexDirection: "row" }}>
-      <ImageSlider images={project.photo} />
-      {/* <S.projectImage src={project.photo} className="project-image" /> */}
-      <div style={{ display: "flex", flexDirection: "column" }}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: isMobile ? "center" : "",
+        alignItems: isMobile ? "center" : "flex-start",
+        flexDirection: isMobile ? "column" : "row",
+      }}
+    >
+      {isMobile ? (
+        <div style={{ display: "flex" }}>
+          <ImageSlider images={project.photo} />
+        </div>
+      ) : (
+        <div style={{ display: "flex", flexDirection: "row" }}>
+          <ImageSlider images={project.photo} />
+        </div>
+      )}
+      <S.projectImgExplainContainer>
         <S.projectsubTitle className="project-title">
           {project.kr}
         </S.projectsubTitle>
+        <br />
         <S.projectDescription
           className="project-description"
           style={{ whiteSpace: "pre-line" }}
         >
           {project.content}
         </S.projectDescription>
-      </div>
+      </S.projectImgExplainContainer>
     </div>
     {project.link && (
       <S.sitelink href={project.link} target="_blank">
@@ -186,12 +179,14 @@ const Project = ({ project }) => (
 );
 
 const Projects: React.FC<ProjectsProps> = ({ projectsRef }: ProjectsProps) => {
+  const isMobile = window.innerWidth <= 1100;
+
   return (
     <S.ProjectWrapper id="projects" ref={projectsRef}>
       <S.ProjectTitle>PROJECTS</S.ProjectTitle>
       <div className="projects-container">
         {projects.map((project) => (
-          <Project key={project.id} project={project} />
+          <Project key={project.id} project={project} isMobile={isMobile} />
         ))}
       </div>
     </S.ProjectWrapper>

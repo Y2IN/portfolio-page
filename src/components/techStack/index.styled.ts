@@ -2,11 +2,11 @@ import styled from "styled-components";
 
 export const TechStackWrapper = styled.div`
   display: flex;
-  width: 100%;
-  height: 100vh;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
   color: white;
   z-index: 1;
 `;
@@ -17,6 +17,10 @@ export const Text = styled.div`
   font-family: Inter;
   font-size: 6.25rem;
   font-style: normal;
+
+  @media screen and (max-width: 1100px) {
+    font-size: 4rem;
+  }
 `;
 
 export const skillText = styled.div`
@@ -27,7 +31,10 @@ export const skillText = styled.div`
   font-family: Inter;
   font-size: 2rem;
   font-style: normal;
-  font-weight: 400;
+
+  @media screen and (max-width: 1100px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const skilltype = styled.div`
@@ -38,6 +45,10 @@ export const skilltype = styled.div`
   font-size: 1.3rem;
   font-style: normal;
   font-weight: 400;
+
+  @media screen and (max-width: 1100px) {
+    font-size: 1rem;
+  }
 `;
 
 export const TechStackTitle = styled.div`
@@ -47,23 +58,35 @@ export const TechStackTitle = styled.div`
   font-size: 6.25rem;
   font-style: normal;
   line-height: 300%;
+
+  @media screen and (max-width: 1100px) {
+    font-size: 4rem;
+    line-height: 200%;
+  }
 `;
 
 export const StackWrapper = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
   width: 100%;
-  height: 50%;
-  margin-top: 5%;
+  min-height: 50vh;
   gap: 3rem;
+  justify-content: center;
+
+  @media screen and (max-width: 1100px) {
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
 `;
 
 export const StackContainer = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 20rem;
-  height: 50rem;
+  max-width: 300px;
   border-radius: 1.875rem;
   border: 1px solid #000000;
   background: rgba(217, 217, 217, 0.5);
@@ -71,12 +94,23 @@ export const StackContainer = styled.div`
   padding: 2rem;
   box-sizing: border-box;
 
+  @media screen and (max-width: 1100px) {
+    width: 18rem;
+    max-width: 100%;
+    padding: 1rem;
+  }
+
   img {
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
     margin-bottom: 1rem;
     width: 100px;
     height: 100px;
+
+    @media screen and (max-width: 1100px) {
+      width: 70px;
+      height: 70px;
+    }
   }
 
   img:hover {
@@ -97,6 +131,10 @@ export const StackContainer = styled.div`
     font-weight: 400;
     opacity: 1;
     z-index: 2;
+
+    @media screen and (max-width: 1100px) {
+      font-size: 1rem;
+    }
   }
 
   img:hover::before {
@@ -113,8 +151,12 @@ export const StackContainer = styled.div`
 `;
 
 export const icon = styled.img`
-  // align-self: center;
   display: flex;
   width: 3.125rem;
   height: 3.125rem;
+
+  @media screen and (max-width: 1100px) {
+    width: 2rem;
+    height: 2rem;
+  }
 `;

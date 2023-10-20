@@ -7,8 +7,8 @@ export const TerminalWrapper = styled.nav`
   align-items: center;
   position: fixed;
   color: #ffffff;
-  bottom: 0;
-  right: 20px;
+  bottom: 3rem;
+  right: 2rem;
   z-index: 999;
   gap: 2rem;
 `;

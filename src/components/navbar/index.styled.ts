@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const NavbarWrapper = styled.nav`
+  display: flex;
   width: 100%;
   height: 70px;
   display: flex;
@@ -22,6 +23,8 @@ export const Hamburger = styled.img`
     width: 2rem;
     height: 2rem;
     cursor: pointer;
+    margin-top: 2rem;
+    align-items: center;
   }
 `;
 
@@ -44,26 +47,33 @@ export const LogoImg = styled.img`
   height: 32px;
 `;
 
-export const RightContents = styled.div`
+export const RightContents = styled.div<{
+  $isListOpen: boolean;
+}>`
   display: flex;
   align-items: center;
   gap: 2rem;
   background-color: transparent;
 
   & > *:last-child {
-    padding-right: 2rem;
   }
 
   @media screen and (max-width: 768px) {
-    flex-direction: row;
-    height: auto;
+    display: flex;
+    flex-direction: column;
+    position: static;
+    right: 0;
+    top: auto;
+    height: 100%;
     padding: 1rem;
     gap: 1rem;
-    justify-content: flex-end;
     align-items: center;
 
     & > *:not(:first-child) {
-      display: none;
+      display: flex;
+      position: relative;
+      right: ${(props) => (props.$isListOpen ? "0px" : "-120px")};
+      transition: right 0.5s ease;
     }
 
     & > *:first-child {

@@ -83,9 +83,6 @@ const TechStack: React.FC<TechStackProps> = ({
             title="Figma"
           />
         </S.StackContainer>
-        {/* <S.StackContainer> */}
-        {/* <S.skillText>COMMUNICATION</S.skillText> */}
-        {/* </S.StackContainer> */}
         <S.StackContainer>
           <S.skillText>TOOL</S.skillText>
           <img
