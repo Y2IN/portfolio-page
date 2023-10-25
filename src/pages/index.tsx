@@ -9,6 +9,7 @@ import Navbar from "../components/navbar";
 import Terminal from "../components/terminal";
 import MeteorShower from "../components/meteor";
 import Background from "../components/background";
+import "@fontsource/ubuntu/500.css";
 
 const isBrowser = typeof window !== "undefined";
 
@@ -44,7 +45,7 @@ const IndexPage: React.FC<PageProps> = () => {
   }, []);
 
   return (
-    <S.Wrapper id="main">
+    <S.Wrapper id="main" style={{ fontFamily: "Ubuntu" }}>
       {/* <div style={{ marginTop: "100px" }}> */}
       <Background />
       <MeteorShower numMeteors={50} />

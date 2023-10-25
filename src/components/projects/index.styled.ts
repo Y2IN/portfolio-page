@@ -24,7 +24,7 @@ export const ProjectWrapper = styled.div`
 export const ProjectTitle = styled.div`
   display: flex;
   text-align: center;
-  font-family: Inter;
+  //font-family: Inter;
   font-size: 6.25rem;
   font-style: normal;
   line-height: 300%;
@@ -85,7 +85,7 @@ export const projectTitle = styled.span`
   display: flex;
   font-size: 5rem;
   font-weight: 400;
-  font-family: Inter;
+  //font-family: Inter;
   font-style: normal;
   align-items: center;
   justify-content: center;
@@ -103,7 +103,7 @@ export const projectTitle = styled.span`
 export const projectskill = styled.div`
   font-size: 1.5rem;
   font-weight: 400;
-  font-family: Inter;
+  //font-family: Inter;
   font-style: normal;
   padding-left: 2rem;
 
@@ -118,7 +118,7 @@ export const projectskill = styled.div`
 export const projectDate = styled.div`
   font-size: 1.5rem;
   font-weight: 400;
-  font-family: Inter;
+  //font-family: Inter;
   font-style: normal;
   padding: 0 2rem;
 
@@ -153,7 +153,7 @@ export const projectImage = styled.img`
 export const projectsubTitle = styled.div`
   display: flex;
   font-size: 2.5rem;
-  font-family: Inter;
+  //font-family: Inter;
   font-style: normal;
   margin-bottom: 1rem;
 
@@ -169,7 +169,7 @@ export const projectDescription = styled.div`
   display: flex;
   font-size: 2rem;
   font-weight: 400;
-  font-family: Inter;
+  //font-family: Inter;
   font-style: normal;
 
   @media screen and (max-width: 1100px) {

@@ -20,7 +20,7 @@ export const AboutWrapper = styled.div`
 export const AboutTitle = styled.div`
   display: flex;
   text-align: center;
-  font-family: Inter;
+  // //font-family: Inter;
   font-size: 6.25rem;
   font-style: normal;
   line-height: 300%;
@@ -35,7 +35,7 @@ export const Text = styled.div`
   display: flex;
   color: #fbf2f2;
   text-align: center;
-  font-family: Inter;
+  // //font-family: Inter;
   font-size: 2.25rem;
   font-style: normal;
   font-weight: 400;
@@ -185,7 +185,7 @@ export const deatilText = styled.div`
 // export const AboutTitle = styled.div`
 //   display: flex;
 //   text-align: center;
-//   font-family: Inter;
+//   //font-family: Inter;
 //   font-size: 6.25rem;
 //   font-style: normal;
 //   line-height: 300%;
@@ -195,7 +195,7 @@ export const deatilText = styled.div`
 //   display: flex;
 //   color: #fbf2f2;
 //   text-align: center;
-//   font-family: Inter;
+//   //font-family: Inter;
 //   font-size: 2.25rem;
 //   font-style: normal;
 //   font-weight: 400;

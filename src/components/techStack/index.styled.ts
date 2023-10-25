@@ -14,7 +14,7 @@ export const TechStackWrapper = styled.div`
 export const Text = styled.div`
   display: flex;
   text-align: center;
-  font-family: Inter;
+  //font-family: Inter;
   font-size: 6.25rem;
   font-style: normal;
 
@@ -28,7 +28,7 @@ export const skillText = styled.div`
   color: #fbf2f2;
   margin-bottom: 1.5rem;
   text-align: center;
-  font-family: Inter;
+  //font-family: Inter;
   font-size: 2rem;
   font-style: normal;
 
@@ -41,7 +41,7 @@ export const skilltype = styled.div`
   display: flex;
   color: #fbf2f2;
   text-align: center;
-  font-family: Inter;
+  //font-family: Inter;
   font-size: 1.3rem;
   font-style: normal;
   font-weight: 400;
@@ -54,7 +54,7 @@ export const skilltype = styled.div`
 export const TechStackTitle = styled.div`
   display: flex;
   text-align: center;
-  font-family: Inter;
+  //font-family: Inter;
   font-size: 6.25rem;
   font-style: normal;
   line-height: 300%;
@@ -127,7 +127,7 @@ export const StackContainer = styled.div`
     padding: 0.5rem;
     border-radius: 0.5rem;
     font-size: 1.5rem;
-    font-family: Inter;
+    //font-family: Inter;
     font-weight: 400;
     opacity: 1;
     z-index: 2;

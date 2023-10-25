@@ -23,6 +23,7 @@ import smartwindow2 from "../../images/smartwindow2.png";
 import smartwindow3 from "../../images/smartwindow3.png";
 import minirt from "../../images/minirt.png";
 import styled, { keyframes } from "styled-components";
+import { useMediaQuery } from "usehooks-ts";
 
 // import githublogo from "../../images/githublogo.svg";
 
@@ -41,7 +42,7 @@ const projects: Array<{
 }> = [
   {
     id: "칙칙퐁퐁",
-    use: "React, Nest.js, postgresql, socket.io, docker-compose, nginx, git",
+    use: "React Nest.js postgresql socket.io docker-compose nginx git",
     date: "2023.07 ~ 2023.09(5명)",
     kr: "실시간 멀티플레이 게임",
     content:
@@ -179,7 +180,7 @@ const Project = ({ project, isMobile }) => (
 );
 
 const Projects: React.FC<ProjectsProps> = ({ projectsRef }: ProjectsProps) => {
-  const isMobile = window.innerWidth <= 1100;
+  const isMobile = useMediaQuery("(max-width: 1100px)");
 
   return (
     <S.ProjectWrapper id="projects" ref={projectsRef}>
