@@ -54,7 +54,7 @@ const TypographyDevider: React.FC<TypographyDeviderProps> = ({
 
 const scroll = Scroll.animateScroll;
 
-const cdList = ["main", "about", "tech-stack", "projects", "contact"];
+const cdList = ["main", "about", "tech-stack", "projects"];
 
 const commendAction = (commend: string) => {
   const commendSplit = commend.split(" ");
@@ -64,7 +64,7 @@ const commendAction = (commend: string) => {
     case "pwd":
       return ["pwd", "https://y2in.dev"];
     case "ls":
-      return ["ls", "main/ about/ tech-stack/ projects/ contact/"];
+      return ["ls", "main/ about/ tech-stack/ projects/"];
     case "cd":
       if (commendSplit.length === 1) return ["cd", "~"];
       const path = commendSplit.slice(1, commendSplit.length).join(" ");
