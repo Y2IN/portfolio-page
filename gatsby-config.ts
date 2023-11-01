@@ -31,6 +31,13 @@ const config: GatsbyConfig = {
         icon: `./src/images/402.png`,
       },
     },
+    {
+      resolve: `gatsby-plugin-gtag`,
+      options: {
+        trackingId: `G-XT59SMF8BJ`,
+        head: true,
+      },
+    },
   ],
 };
 
