@@ -36,7 +36,7 @@ const About: React.FC<AboutProps> = ({ aboutRef }: AboutProps) => {
           <S.explainItemsByColumn>
             <S.explainItem>
               <S.profileiIcon src={git} />
-              <S.Text>한국공학대학교 전자공학부</S.Text>
+              <S.Text>전자공학부</S.Text>
             </S.explainItem>
             <S.explainItem>
               <S.profileiIcon src={mail} />

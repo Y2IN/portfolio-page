@@ -24,7 +24,6 @@ export const ProjectWrapper = styled.div`
 export const ProjectTitle = styled.div`
   display: flex;
   text-align: center;
-  //font-family: Inter;
   font-size: 6.25rem;
   font-style: normal;
   line-height: 300%;
@@ -86,6 +85,7 @@ export const projectTitle = styled.span`
   font-size: 5rem;
   font-weight: 400;
   //font-family: Inter;
+  font-family: TmonMonsori, cursive;
   font-style: normal;
   align-items: center;
   justify-content: center;

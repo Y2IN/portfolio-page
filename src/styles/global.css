@@ -5,4 +5,10 @@ html, body {
     margin: 0;
     background-color: black;
     font-family: 'Ubuntu', sans-serif;
+    @font-face {
+        font-family: 'TmonMonsori';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
 }

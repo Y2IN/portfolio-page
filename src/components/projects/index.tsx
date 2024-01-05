@@ -22,6 +22,7 @@ import smartwindow1 from "../../images/smartwindow1.png";
 import smartwindow2 from "../../images/smartwindow2.png";
 import smartwindow3 from "../../images/smartwindow3.png";
 import minirt from "../../images/minirt.png";
+import musicplayer from "../../images/musicplayer.png";
 import styled, { keyframes } from "styled-components";
 import { useMediaQuery } from "usehooks-ts";
 
@@ -51,17 +52,27 @@ const projects: Array<{
     photo: [ts1, ts2, ts3, ts4, ts5, ts6, ts7],
   },
   {
-    id: "Inception",
-    use: "docker docker-compose alpine nginx mariadb WordPress",
-    date: "2023.06 ~ 2023.07(1명)",
-    kr: "가상환경에서 워드프레스 구현",
+    id: "music player",
+    use: "javascript css Html git",
+    date: "2024.01 (1명)",
+    kr: "바닐라 자바스크립트로 구현한 음악 플레이어",
     content:
-      "docker-compose를 사용하여 컨테이너를 빌드\n\n Alpine Linux를 사용하여 이미지 패키지 설치\n\nnginx를 사용하여 웹서버 구현\n\nmariadb를 사용하여 데이터베이스 구현\n\nWordPress를 사용하여 웹사이트 구현\n\n개발 및 운영 환경에서 컨테이너화 기술의 중요성 이해",
-    link: "https://github.com/Y2IN/42Seoul/tree/main/5/Inception",
-    photo: [inception2, inception],
-
-    // photo: "photo위치",
+      "가사 자동스크롤 구현\n\n음악 재생, 일시정지, 이전곡, 다음곡, 음량 조절 기능 구현\n\n음악 재생시 진행바 구현\n\n음악 재생시 진행바 클릭시 해당 위치로 이동 구현",
+    // link: "https://github.com/Y2IN/transcendence",
+    photo: [musicplayer],
   },
+  // {
+  //   id: "Inception",
+  //   use: "docker docker-compose alpine nginx mariadb WordPress",
+  //   date: "2023.06 ~ 2023.07(1명)",
+  //   kr: "가상환경에서 워드프레스 구현",
+  //   content:
+  //     "docker-compose를 사용하여 컨테이너를 빌드\n\n Alpine Linux를 사용하여 이미지 패키지 설치\n\nnginx를 사용하여 웹서버 구현\n\nmariadb를 사용하여 데이터베이스 구현\n\nWordPress를 사용하여 웹사이트 구현\n\n개발 및 운영 환경에서 컨테이너화 기술의 중요성 이해",
+  //   link: "https://github.com/Y2IN/42Seoul/tree/main/5/Inception",
+  //   photo: [inception2, inception],
+
+  //   // photo: "photo위치",
+  // },
   {
     id: "Webserv",
     use: "c++ Nginx git",
@@ -147,8 +158,7 @@ const Project = ({ project, isMobile }) => (
         justifyContent: isMobile ? "center" : "",
         alignItems: isMobile ? "center" : "flex-start",
         flexDirection: isMobile ? "column" : "row",
-      }}
-    >
+      }}>
       {isMobile ? (
         <div style={{ display: "flex" }}>
           <ImageSlider images={project.photo} />
@@ -165,8 +175,7 @@ const Project = ({ project, isMobile }) => (
         <br />
         <S.projectDescription
           className="project-description"
-          style={{ whiteSpace: "pre-line" }}
-        >
+          style={{ whiteSpace: "pre-line" }}>
           {project.content}
         </S.projectDescription>
       </S.projectImgExplainContainer>

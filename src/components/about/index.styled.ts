@@ -35,7 +35,6 @@ export const Text = styled.div`
   display: flex;
   color: #fbf2f2;
   text-align: center;
-  // //font-family: Inter;
   font-size: 2.25rem;
   font-style: normal;
   font-weight: 400;
